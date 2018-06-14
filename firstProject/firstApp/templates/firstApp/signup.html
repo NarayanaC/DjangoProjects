@@ -1,0 +1,22 @@
+
+ {% include "firstApp/layouts/header.html" %}
+
+<!DOCTYPE html>{% load staticfiles %}
+<html>
+<head>
+	<title>Signup</title>
+</head>
+<body>
+
+	<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    {{ form2.as_e }}
+
+    <button type="submit">Sign up</button>
+  </form>
+
+</body>
+</html>
+
+ {% include "firstApp/layouts/footer.html" %}

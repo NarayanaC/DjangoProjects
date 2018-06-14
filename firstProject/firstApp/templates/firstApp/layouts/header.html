@@ -1,0 +1,103 @@
+
+
+
+<!DOCTYPE html>
+
+
+<html lang="en">{% load staticfiles %}
+
+
+<head>
+   
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> RedBux | The Very First Site Created On Django  </title>
+    <!-- favicon -->
+    
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css'  %}" type="text/css" >
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="{% static 'css/fontawesome-all.min.css' %}">
+    <!-- flaticon -->
+    <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
+    <!-- slicknav -->
+    <link rel="stylesheet" href="{% static 'css/slicknav.min.css' %}">
+    <!-- animate.css -->
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    <!-- Owl Carousel -->
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <!-- magnific popup -->
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- responsive -->
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+
+</head>
+
+<body>
+    <!-- support bar area start -->
+    <div class="support-bar">
+        <div class="container">
+            <div class="row justify-content-end">
+                <div class="col-lg-9 col-md-12 col-sm-12 support-bar-curve">
+                    <div class="support-wrapper">
+                        <div class="support-bar-left">
+                            <span class="support-item"><i class="fab fa-bitcoin"></i> <span id="live_price">$9578.453</span></span>
+                        </div>
+                        <div class="support-bar-right">
+                            <span class="support-item"><i class="fas fa-clock"></i> <span id="live_clock">07:19:03</span></span>
+                            <span class="support-item" id="today_date"> <i class="fas fa-calendar-alt"></i> 27/04/2018</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- support bar area end -->
+    <!-- navbar area start -->
+    <nav class="navbar-area">
+         <!-- {% block head %}
+  -->
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3  col-xs-3">
+                    <a href="index-2.html" class="logo">
+                        <img src="{% static 'img/logo.png' %}" alt="logo image">
+                    </a>
+                </div>
+                <div class="col-lg-9  col-xs-9">
+                    <div class="responsive-menu"></div>
+                    <ul id="primary-menu">
+                        <a href="{% url 'index' %}"><li>Home</li></a>
+                        <a href="{% url 'aboutus' %}"><li>About Us</li></a>
+                        <a href="{% url 'register' %}"><li>Register Now</li></a>
+                        <a href="{% url 'users' %}"><li>View Users</li></a>
+                        {% if user.is_authenticated %}
+                        {{ request.session.username }}
+                        {{ request.session.email }}
+
+                        {{ request.session.id }}
+
+                        <a href="{% url 'logout' %}"><li>Logout</li></a>
+                        {% else %}
+                        <a href="{% url 'signup' %}"><li>SignUp</li></a>
+                        <a href="{% url 'login' %}"><li>Login</li></a>
+                        <a href="{% url 'ext' %}"><li>Extended Data</li></a>
+                        <a href="{% url 'vext' %}"><li>ViewExt</li></a>
+                        <li class="boxed-btn-rounded"><a href="#get_started">get started</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+     <!--    {% endblock %} -->
+    </nav>
+<!-- navbar area end -->
+<!-- header area start  -->
+
+
+

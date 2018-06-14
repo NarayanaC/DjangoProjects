@@ -1,0 +1,54 @@
+{% include "firstApp/layouts/header.html" %}
+
+
+<style>{% load staticfiles %}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+</style>
+
+<section class="double-your-coin-area" id="get_started" style="height: auto;margin-bottom: 2%;">
+    <div class="container">
+<h2>Users Table</h2>
+
+  <table >
+                          <tr>
+                    <th>Student Name</th>
+                    <th>Student Class</th>
+                    <th>Student Address</th>
+                    <th>Student Pone</th>
+                    <th>Action</th>
+
+
+                  </tr>
+                  {% for user in users %}
+                      <tr>
+                        <td>{{ user.s_name}}</td>
+                        <td>{{ user.s_class}}</td>
+                        <td>{{ user.s_address}}</td>
+                        <td>{{ user.s_phone}}</td>
+                        <td><a href="{% url 'update' user.id %}"><button class="btn-md btn-primary">Edit</button></a>
+                        <a href="{% url 'delete' user.id %}"><button class="btn-md btn-danger">Delete</button></a>
+                      </td>
+
+                      </tr>
+                  {% endfor %}
+                       
+ </table>
+</div>
+</section>
+</div>
+{% include "firstApp/layouts/footer.html" %}

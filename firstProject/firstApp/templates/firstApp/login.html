@@ -1,0 +1,22 @@
+
+ {% include "firstApp/layouts/header.html" %}
+
+<!DOCTYPE html>{% load staticfiles %}
+<html>
+<head>
+	<title>Signup</title>
+</head>
+<body>
+
+	<form action="{% url 'hell' %}" method="post">
+    {% csrf_token %}
+    <!-- {{ form.as_p }} -->
+     <input type="text" name="username" placeholder="Enter your Name....">
+     <input type="password" name="password" placeholder="Password">
+    <button type="submit">Sign up</button>
+  </form>
+
+</body>
+</html>
+
+ {% include "firstApp/layouts/footer.html" %}
